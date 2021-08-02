@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
+import SetLanguage from '../set-language/SetLanguage'
 
 export default function Header() {
   return (
@@ -18,6 +19,7 @@ export default function Header() {
           />
         </a>
       </Link>
+      <SetLanguage />
     </header>
   )
 }

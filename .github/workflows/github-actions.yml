@@ -14,3 +14,11 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: npm run build
+
+      - name: Collect test coverage report
+        run: npm run coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

@@ -10,7 +10,9 @@
     "build": "next build",
     "dev": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "codecov": "./node_modules/.bin/codecov -f coverage/coverage-final.json"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",

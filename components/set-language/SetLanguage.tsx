@@ -1,6 +1,7 @@
 import {useRouter} from 'next/dist/client/router'
 import {useTranslation} from 'next-i18next'
 
+//Dropdown list component for changing language
 const SetLanguage = () => {
   const {t} = useTranslation(['common'])
   const router = useRouter()

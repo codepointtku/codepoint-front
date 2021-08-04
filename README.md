@@ -1,5 +1,7 @@
 # Codepoint - Front-end
 
+[![codecov](https://codecov.io/gh/codepointtku/codepoint-front/branch/main/graph/badge.svg?token=f63W1HtqyG)](https://codecov.io/gh/codepointtku/codepoint-front)
+
 **Codepoint's Front-end web application.**
 
 * **Technologies:** Front-end is built with Next.js. We do our tests with Jest.js, and use our own linter and prettier configs for this project.

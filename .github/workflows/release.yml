@@ -1,0 +1,46 @@
+name: Release
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Check Lint
+        run: npm run lint
+
+      - name: Run Test
+        run: npm run test
+
+      - name: Build project
+        run: npm run build
+
+      - name: Get version
+        uses: nyaa8/package-version@v1.0.3
+      
+      - name: Create GitHub release
+        id: create-new-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.PACKAGE_VERSION }}
+          release_name: ${{ env.PACKAGE_VERSION }}

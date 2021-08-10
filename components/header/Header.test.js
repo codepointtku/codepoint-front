@@ -1,16 +1,16 @@
 import Enzyme, {shallow} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
-import Footer from './Footer'
+import Header from './Header'
 import Image from 'next/image'
 
 Enzyme.configure({adapter: new Adapter()})
 
 const setUp = () => {
-  const wrapper = shallow(<Footer />)
+  const wrapper = shallow(<Header />)
   return wrapper
 }
 
-describe('Footer component', () => {
+describe('Header component', () => {
   let wrapper
   beforeEach(() => {
     wrapper = setUp()

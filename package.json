@@ -28,8 +28,6 @@
     "@babel/preset-react": "^7.14.5",
     "@codepointtku/eslint-config-jsx-eslint": "^1.0.5",
     "@codepointtku/jsx-prettier": "^1.0.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
     "@types/react": "17.0.14",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-jest": "^27.0.6",
@@ -37,10 +35,8 @@
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
     "eslint-plugin-jest": "^24.4.0",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
-    "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^17.0.2",
+    "jest-css-modules": "^2.1.0",
     "typescript": "4.3.5"
   }
 }

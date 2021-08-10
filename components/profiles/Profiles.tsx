@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 
 export default function Profiles({team}: any) {
   const title = <h1 className={styles.title}>Members</h1>

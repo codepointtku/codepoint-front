@@ -1,11 +1,10 @@
+$primaryBlue: #0070f3;
+
 .container {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-areas:
-    'header header header'
-    'main main main'
-    'footer footer footer';
+  grid-template-areas: 'header header header' 'main main main' 'footer footer footer';
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: clamp(100px, 150px, 200px) 2fr clamp(100px, 150px, 200px);
 }
@@ -16,11 +15,11 @@
   justify-content: center;
   padding: 0.75rem;
   grid-area: header;
-}
 
-.header p {
-  font-size: 2rem;
-  font-weight: 200;
+  p {
+    font-size: 2rem;
+    font-weight: 200;
+  }
 }
 
 .main {
@@ -28,8 +27,7 @@
   grid-area: main;
 }
 
-.header,
-.main {
+.header, .main {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2560' height='1440' preserveAspectRatio='none' viewBox='0 0 2560 1440'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1587%26quot%3b)' fill='none'%3e%3crect width='2560' height='1440' x='0' y='0' fill='url(%23SvgjsLinearGradient1588)'%3e%3c/rect%3e%3cpath d='M2263.2839025511726 401.7840968211174L2042.3522776133166 593.8370283437844 2234.4052091359836 814.7686532816404 2455.3368340738393 622.7157217589734z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M481.756892401714 1091.4912821011717L534.7086753034321 1303.8692833601117 747.086676562372 1250.9175004583935 694.1348936606539 1038.5394991994538z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1842.8206846558833-225.08988005265806L1651.9581662177188 10.60570125575012 1887.653747526127 201.46821969391462 2078.5162659642915-34.22736161449356z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M970.6772097846889 270.1707936298643L1033.8104749563172-3.289421325828357 697.2169948289962 207.0375284582359z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M2052.7318219402746 1448.5678381491325L2215.8940425420155 1223.994307608967 1991.32051200185 1060.8320870072262 1828.158291400109 1285.4056175473916z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1106.629196889276 900.6015673038447L922.4396221873938 847.7860566532028 935.3111435623719 1150.4781740313472z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1266.6871140915462 1439.2040433763798L1437.1016694992695 1280.289899561235 1278.187525684125 1109.8753441535116 1107.7729702764013 1268.7894879686564z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1796.7783691978393 831.2698255645801L1814.0227551661653 584.6636170296218 1567.416546631207 567.4192310612957 1550.172160662881 814.025439596254z' fill='rgba(191%2c 230%2c 246%2c 1)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1587'%3e%3crect width='2560' height='1440' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='50%25' x2='100%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1588'%3e%3cstop stop-color='rgba(240%2c 245%2c 250%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-attachment: fixed;
   background-size: cover;
@@ -50,8 +48,7 @@
   background-position-y: 10vw;
 }
 
-.footerlogo,
-.footerinfo {
+.footerlogo {
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -59,18 +56,24 @@
 }
 
 .footerinfo {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   padding: 1rem;
   border-left: 1px solid var(--gray);
 }
 
-.footer a {
-  margin-top: 0.5rem;
-  font-weight: 600;
-}
+.footer {
+  a {
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
 
-.footer p {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 }
 
 .title {
@@ -79,26 +82,26 @@
   text-align: center;
   line-height: 1.15;
   font-size: clamp(2rem, 4rem, 6rem);
-}
-
-.title,
-.title a {
   font-weight: 200;
   color: var(--cyan);
   border-color: var(--black);
+
+  a {
+    font-weight: 200;
+    color: var(--cyan);
+    border-color: var(--black);
+
+    &:hover, &:focus, &:active {
+      text-decoration: underline 2px;
+      text-shadow: 0 0 5px var(--light-cyan);
+    }
+  }
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline 2px;
-  text-shadow: 0 0 5px var(--light-cyan);
-}
-
-.footer a:hover,
-.footer a:focus,
-.footer a:active {
-  text-decoration: underline;
+.footer a {
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+  }
 }
 
 .about {
@@ -121,8 +124,7 @@
   border-radius: 50%;
 }
 
-.card,
-.profile {
+.card {
   background: rgba(255, 255, 255, 0.85);
   margin: clamp(0.5rem, 1rem, 2rem);
   padding: 1.5rem;
@@ -135,6 +137,15 @@
 }
 
 .profile {
+  background: rgba(255, 255, 255, 0.85);
+  margin: clamp(0.5rem, 1rem, 2rem);
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  border-radius: 12px;
+  box-shadow: 0 0 5px -2px var(--dark);
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: clamp(200px, calc(100% - 5vh), 400px);
   display: flex;
   flex-flow: wrap;
 }
@@ -157,42 +168,55 @@
   line-height: 1.4;
 }
 
-.card:hover,
-.card:focus,
-.card:active,
-.profile:hover,
-.profile:active,
-.profile:focus {
-  box-shadow: 0px 0px 5px 1px var(--light-cyan);
+.card {
+  &:hover, &:focus, &:active {
+    box-shadow: 0px 0px 5px 1px var(--light-cyan);
+  }
 }
 
-.card:active .text,
-.card:focus .text,
-.card:hover .text,
-.profile:active .text,
-.profile:focus .text,
-.profile:hover .text {
-  color: var(--cyan);
+.profile {
+  &:hover, &:active, &:focus {
+    box-shadow: 0px 0px 5px 1px var(--light-cyan);
+  }
 }
 
-.card:focus-visible,
-.profile:focus-visible {
+.card {
+  &:active .text, &:focus .text, &:hover .text {
+    color: var(--cyan);
+  }
+}
+
+.profile {
+  &:active .text, &:focus .text, &:hover .text {
+    color: var(--cyan);
+  }
+}
+
+.card:focus-visible, .profile:focus-visible {
   outline: none;
   outline-offset: 0;
   border-width: 2px;
   box-shadow: 0px 0px 5px 2px var(--light-cyan);
+ 
 }
 
-.card:hover,
-.card:focus,
-.card:focus-visible,
-.card:active,
-.profile:hover,
-.profile:active,
-.profile:focus,
-.footer a:hover,
-.footer a:focus,
-.footer a:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.card {
+  &:hover, &:focus, &:focus-visible, &:active {
+    color: $primaryBlue;
+    border-color: $primaryBlue;
+  }
+}
+
+.profile {
+  &:hover, &:active, &:focus {
+    color: $primaryBlue;
+    border-color: $primaryBlue;
+  }
+}
+
+.footer a {
+  &:hover, &:focus, &:active {
+    color: $primaryBlue;
+    border-color: $primaryBlue;
+  }
 }

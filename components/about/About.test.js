@@ -26,8 +26,8 @@ describe('About component', () => {
   })
 
   it('renders paragraph', () => {
-    const title = wrapper.find('p')
-    expect(title.length).toBe(1)
+    const text = wrapper.find('p')
+    expect(text.length).toBe(1)
   })
 
   it('renders image', () => {

@@ -26,5 +26,14 @@ TOKEN=*Your github token*
 $ npm start
 ```
 
+**build docker image**:
+```
+docker build -t codepoint-tku .
+```
+**mount image**
+```
+docker run --name [name of container] codepoint-tku
+```
+
 ## License
 This repository is released under the [MIT License](LICENSE)

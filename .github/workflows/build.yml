@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [develop]
 
-
 jobs:
   lint_test_build:
     runs-on: ubuntu-latest

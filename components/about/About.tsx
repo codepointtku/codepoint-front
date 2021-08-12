@@ -1,17 +1,15 @@
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 import Työpiste from '../../public/tyopiste_logo.webp'
+import {useTranslation} from 'next-i18next'
 
 export default function About() {
+  const {t} = useTranslation(['common'])
   return (
     <div className={styles.about}>
       <div className={styles.abouttext}>
-        <h1 className={styles.title}>About us</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus blanditiis odit
-          necessitatibus, rerum voluptates modi recusandae maiores doloribus. Itaque, ex!
-          Aspernatur, recusandae voluptate. Quas similique, vero neque deserunt officiis in!
-        </p>
+        <h1 className={styles.title}>{t('aboutus')}</h1>
+        <p>{t('about')}</p>
       </div>
       <a href="https://www.turku.fi/tyopiste" rel="noreferrer" target="_blank">
         <Image

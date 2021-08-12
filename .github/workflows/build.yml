@@ -1,0 +1,39 @@
+name: Build
+
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  lint_test_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Check Lint
+        run: npm run lint
+
+      - name: Run Test
+        run: npm run test
+
+      - name: Build project
+        run: npm run build
+
+      - name: Collect test coverage report
+        run: npm run coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

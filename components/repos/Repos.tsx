@@ -1,4 +1,4 @@
-import styles from '../../styles/Home.module.scss'
+import styles from '../../styles/Home.module.css'
 
 export default function Repositories({repos}: any) {
   const title = (

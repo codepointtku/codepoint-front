@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import {InferGetServerSidePropsType} from 'next'
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.css'
 
 import {gql} from '@apollo/client'
 import client from '../apollo-client'

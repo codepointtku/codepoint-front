@@ -1,5 +1,5 @@
 import {useTranslation} from 'next-i18next'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 
 export default function Repositories({repos}: any) {
   const {t} = useTranslation(['common'])

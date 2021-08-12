@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 import Työpiste from '../../public/tyopiste_logo.webp'
 import {useTranslation} from 'next-i18next'
 

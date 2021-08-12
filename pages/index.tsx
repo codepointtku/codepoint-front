@@ -3,9 +3,6 @@ import dynamic from 'next/dynamic'
 import {InferGetServerSidePropsType} from 'next'
 import styles from '../styles/Home.module.css'
 
-import {gql} from '@apollo/client'
-import client from '../apollo-client'
-
 import About from '../components/about/About'
 import Header from '../components/header/Header'
 import Repositories from '../components/repos/Repos'
@@ -14,10 +11,8 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 
-export default function Home({
-  repos,
-  team,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+// eslint-disable-next-line no-unused-vars
+export default function Home({_nextI18Next}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,8 +26,8 @@ export default function Home({
       <Header />
       <main className={styles.main}>
         <About />
-        <Repositories repos={repos} />
-        <Profiles team={team} />
+        <Repositories />
+        <Profiles />
       </main>
       <DynamicFooter />
     </div>
@@ -40,47 +35,5 @@ export default function Home({
 }
 
 export async function getServerSideProps({locale}: any) {
-  const {data} = await client.query({
-    query: gql`
-      query Codepoint {
-        organization(login: "codepointtku") {
-          name
-          description
-          repositories(first: 6, orderBy: {field: PUSHED_AT, direction: DESC}) {
-            edges {
-              node {
-                id
-                homepageUrl
-                description
-                name
-                url
-              }
-            }
-          }
-          team(slug: "Developers") {
-            members(orderBy: {field: LOGIN, direction: ASC}) {
-              edges {
-                node {
-                  id
-                  name
-                  bio
-                  url
-                  avatarUrl(size: 512)
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  })
-
-  return {
-    props: {
-      org: data.organization,
-      repos: data.organization.repositories.edges,
-      team: data.organization.team.members.edges,
-      ...(await serverSideTranslations(locale, ['common', 'footer'])),
-    },
-  }
+  return {props: {...(await serverSideTranslations(locale, ['common', 'footer']))}}
 }

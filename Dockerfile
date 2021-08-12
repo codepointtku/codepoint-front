@@ -1,27 +1,35 @@
-# Use the official image as a parent image.
-FROM node:16-alpine
-RUN apk --no-cache libc6-compat
+# Sets node:alpine as a parent image.
+FROM node:alpine AS deps
+RUN apk add --no-cache libc6-compat
 
-# Set the working directory.
+# Sets the working directory and runs npm install (switch to ci later).
 WORKDIR /app
+RUN npm install
 
-# Copy dependencies.
+# Copies the dependency tree.
 COPY package.json package-lock.json .
 
-# Copy the rest of your app's source code from your host to your image filesystem.
+# Build section
+FROM node:alpine as builder
+WORKDIR /app
+# Copies the rest of your app's code from your to your image filesystem.
 COPY . .
+RUN npm run build
 
-# Install, Build and Run.
-RUN npm install && npm run build && npm run dev
+# Nextjs configs and filepaths.
+FROM node:alpine AS runner
+WORKDIR /app
 
-# next.config.js for Docker.
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
+# Sets Nodejs to production.
+ENV NODE_ENV production
+
 # Describe which port the container is listening on at runtime.
 EXPOSE 3000
 
-# Run the specified command within the container.
-CMD ["npm", "start"]
+# Runs the specified command within the container.
+CMD ["npm", "run", "dev"]

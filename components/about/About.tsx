@@ -23,7 +23,7 @@ export default function About() {
           priority
         />
       </a>
-      <Image 
+      <Image
         src="/about_us.svg"
         alt="About us picture"
         width={254}

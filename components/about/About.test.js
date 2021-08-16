@@ -32,6 +32,6 @@ describe('About component', () => {
 
   it('renders image', () => {
     const image = wrapper.find(Image)
-    expect(image.length).toBe(2)
+    expect(image.length).toBe(1)
   })
 })

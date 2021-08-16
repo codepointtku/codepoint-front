@@ -1,18 +1,15 @@
 import {useTranslation} from 'next-i18next'
 import Image from 'next/image'
-<<<<<<< Updated upstream
 import styles from '../../styles/Home.module.scss'
 
 export default function Profiles({team}: any) {
   const {t} = useTranslation(['common'])
   const title = <h1 className={styles.title}>{t('members')}</h1>
-=======
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 
 export default function Profiles({team}: any) {
   const title = <h1 className={styles.title} id='members'>Members</h1>
->>>>>>> Stashed changes
   const profile = team.map((team: teamData) => (
     <a key={team.node.id} href={team.node.url} className={styles.profile}>
       <Image

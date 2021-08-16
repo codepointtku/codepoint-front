@@ -78,11 +78,6 @@ describe('Repos component', () => {
     expect(wrapper).not.toBeNull()
   })
 
-  it('renders header', () => {
-    const pagetitle = wrapper.find('h1')
-    expect(pagetitle.length).toBe(1)
-  })
-
   it('projects should be found', () => {
     const projects = wrapper.find('.card')
     expect(projects.length).toBe(6)
@@ -98,11 +93,5 @@ describe('Repos component', () => {
     const projects = wrapper.find('.card')
     const description = projects.find('.text')
     expect(description.length).toBe(6)
-  })
-
-  it('renders corner styling', () => {
-    const projects = wrapper.find('.card')
-    const cornerstyle = projects.find('.cornerstyle')
-    expect(cornerstyle.length).toBe(6)
   })
 })

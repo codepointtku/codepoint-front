@@ -12,7 +12,6 @@ export default function Header() {
         </a>
       </Link>
       <SetLanguage />
-      
       <ul className={styles.menu}>
         <li className={styles.menu_item}>
           <a href="#about">
@@ -20,7 +19,7 @@ export default function Header() {
           </a>
         </li>
         <li className={styles.menu_item}>
-          <a href="#projects" id='projects-text'>
+          <a href="#projects" id="projects-text">
             Projects
           </a>
         </li>
@@ -30,7 +29,6 @@ export default function Header() {
           </a>
         </li>
       </ul>
-      
       <div className={styles.btn_container}>
         <ul className={styles.dropdown}>
           <Image src="/icons8-language-60-white.png" alt="Language selection" width={25} height={25}/>

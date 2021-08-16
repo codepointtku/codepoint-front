@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 
 export default function Profiles({team}: any) {
-  const title = <h1 className={styles.title} id="members">Members</h1>
   const {t} = useTranslation(['common'])
   const title = <h1 className={styles.title}>{t('members')}</h1>
   const profile = team.map((team: teamData) => (

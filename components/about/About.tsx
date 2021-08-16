@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Työpiste from '../../public/tyopiste_logo.webp'
-<<<<<<< Updated upstream
 import {useTranslation} from 'next-i18next'
-=======
 import Link from 'next/link'
->>>>>>> Stashed changes
 
 export default function About() {
   const {t} = useTranslation(['common'])

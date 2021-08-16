@@ -1,13 +1,12 @@
 import {useTranslation} from 'next-i18next'
 import styles from '../../styles/Home.module.scss'
-import Link from 'next/link'
 
 export default function Repositories({repos}: any) {
-  const {t} = useTranslation(['common'])
+  const {t} = useTranslation(["common"])
   const title = (
     <h1 className={styles.title} id='projects'>
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
-        {t('projects')}
+        {t("projects")}
       </a>
     </h1>
   )
@@ -19,10 +18,8 @@ export default function Repositories({repos}: any) {
   ))
   return (
     <>
-      
       {title}
       <div className={styles.grid}>{repositories}</div>
-      
     </>
   )
 }

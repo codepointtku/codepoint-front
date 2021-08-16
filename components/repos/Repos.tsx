@@ -1,11 +1,10 @@
 import {useTranslation} from 'next-i18next'
-
-import styles from '../../styles/Repos.module.scss'
+import styles from '../../styles/Home.module.scss'
 
 export default function Repositories({repos}: any) {
   const {t} = useTranslation(['common'])
   const title = (
-    <h1 className={styles.pagetitle} id="projects">
+    <h1 className={styles.title} id="projects">
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
         {t('projects')}
       </a>
@@ -13,7 +12,6 @@ export default function Repositories({repos}: any) {
   )
   const repositories = repos.map((repos: repoData) => (
     <a key={repos.node.id} href={repos.node.url} className={styles.card}>
-      <div className={styles.cornerstyle} />
       <h2 className={styles.heading}>{repos.node.name}</h2>
       <p className={styles.text}>{repos.node.description}</p>
     </a>

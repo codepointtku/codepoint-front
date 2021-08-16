@@ -1,6 +1,7 @@
 import Enzyme, {shallow} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import Profiles from './Profiles'
+import Image from 'next/image'
 
 Enzyme.configure({adapter: new Adapter()})
 
@@ -106,13 +107,8 @@ describe('Profiles component', () => {
   })
 
   it('renders header', () => {
-    const pagetitle = wrapper.find('h1')
-    expect(pagetitle.length).toBe(1)
-  })
-
-  it('renders page image', () => {
-    const pageimg = wrapper.find('.pageimg')
-    expect(pageimg.length).toBe(1)
+    const title = wrapper.find('h1')
+    expect(title.length).toBe(1)
   })
 
   it('renders profiles', () => {
@@ -122,29 +118,19 @@ describe('Profiles component', () => {
 
   it('renders profiles image', () => {
     const profile = wrapper.find('.profile')
-    const image = profile.find('.profilepicture')
+    const image = profile.find(Image)
     expect(image.length).toBe(9)
   })
 
   it('renders profiles name', () => {
     const profile = wrapper.find('.profile')
-    const name = profile.find('.name')
+    const name = profile.find('.memberinfo')
     expect(name.length).toBe(9)
   })
 
-  it('renders profiles title', () => {
+  it('renders profiles bio', () => {
     const profile = wrapper.find('.profile')
-    const title = profile.find('.title')
-    expect(title.length).toBe(9)
-  })
-  it('renders profiles text', () => {
-    const profile = wrapper.find('.profile')
-    const text = profile.find('.text')
-    expect(text.length).toBe(9)
-  })
-  it('renders profiles socials', () => {
-    const profile = wrapper.find('.profile')
-    const socials = profile.find('.socials')
-    expect(socials.length).toBe(9)
+    const profileBio = profile.find('.text')
+    expect(profileBio.length).toBe(9)
   })
 })

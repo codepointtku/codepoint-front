@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
-<<<<<<< Updated upstream
 import SetLanguage from '../set-language/SetLanguage'
-=======
 import { useRouter } from 'next/router'
->>>>>>> Stashed changes
 
 export default function Header() {
 
@@ -26,9 +23,7 @@ export default function Header() {
           />
         </a>
       </Link>
-<<<<<<< Updated upstream
       <SetLanguage />
-=======
       
       <ul className={styles.menu}>
         <li className={styles.menu_item}>
@@ -60,7 +55,6 @@ export default function Header() {
           <li className={styles.language}><a href="#">Suomi</a></li>
         </ul>
       </div>
->>>>>>> Stashed changes
     </header>
   )
 }

@@ -22,6 +22,6 @@ describe('Header component', () => {
 
   it('renders image', () => {
     const image = wrapper.find(Image)
-    expect(image.length).toBe(1)
+    expect(image.length).toBe(2)
   })
 })

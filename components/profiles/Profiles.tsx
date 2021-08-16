@@ -3,11 +3,9 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 
 export default function Profiles({team}: any) {
-  const {t} = useTranslation(["common"])
-  const title = <h1 className={styles.title}>{t("members")}</h1>
-import styles from '../../styles/Home.module.css'
-import Link from 'next/link'
-
+  const {t} = useTranslation(['common'])
+  const title = <h1 className={styles.title}>{t('members')}</h1>
+}
 export default function Profiles({team}: any) {
   const title = <h1 className={styles.title} id="members">Members</h1>
   const profile = team.map((team: teamData) => (
@@ -31,7 +29,6 @@ export default function Profiles({team}: any) {
       <div className={styles.grid}>{profile}</div>
     </>
   )
-}
 }
 
 type teamData = {

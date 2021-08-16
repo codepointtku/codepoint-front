@@ -32,6 +32,7 @@ export default function Profiles({team}: any) {
     </>
   )
 }
+}
 
 type teamData = {
   node: {

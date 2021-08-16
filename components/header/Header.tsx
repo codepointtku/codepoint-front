@@ -45,7 +45,7 @@ export default function Header() {
       
       <div className={styles.btn_container}>
         <ul className={styles.dropdown}>
-          <img 
+          <Image 
             src="/icons8-language-60-white.png"
             alt="Language selection"
             width={25}

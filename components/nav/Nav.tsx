@@ -1,17 +1,13 @@
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 
 export default function Nav() {
-    const router = useRouter()
-
     return (
         <nav className={styles.nav}>
-            <Link href='#about'>
-                <a className={styles.tabBtn} id='about_image'>
-                    <Image 
+            <Link href="#about">
+                <a className={styles.tabBtn} id="about_image">
+                    <Image
                         src="/info-solid.svg"
                         alt="About us"
                         id="about_icon"
@@ -21,10 +17,9 @@ export default function Nav() {
                     <p>About Us</p>
                 </a>
             </Link>
-            <Link href='#projects'>
-                <a className={styles.tabBtn} id='projects_image'>
-                    
-                    <Image 
+            <Link href="#projects">
+                <a className={styles.tabBtn} id="projects_image">
+                    <Image
                         src="/icons8-project.svg"
                         alt="Projects"
                         id="projects-icon"
@@ -34,9 +29,8 @@ export default function Nav() {
                     <p>Projects</p>
                 </a>
             </Link>
-            <Link href='#members'>
-                <a className={styles.tabBtn} id='members_image'>
-                
+            <Link href="#members">
+                <a className={styles.tabBtn} id="members_image">
                     <Image
                         src="/users-solid.svg"
                         alt="Members"

@@ -3,7 +3,7 @@ import {useTranslation} from 'next-i18next'
 import Image from 'next/image'
 import {GET_PROFILES} from '../../graphql/graphql'
 import {teamData} from '../../graphql/types/ProfileData'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 
 export default function Profiles() {
   const {t} = useTranslation(['common'])

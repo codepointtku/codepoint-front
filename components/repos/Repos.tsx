@@ -2,7 +2,7 @@ import {useQuery} from '@apollo/client'
 import {useTranslation} from 'next-i18next'
 import {GET_PROJECTS} from '../../graphql/graphql'
 import {repoData} from '../../graphql/types/ProjectData'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 
 export default function Repositories() {
   const {t} = useTranslation(['common'])

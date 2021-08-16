@@ -1,12 +1,12 @@
 %text-style {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   margin: 6px 0;
 }
 
 .pagetitle {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
 
 .name {
   @extend %text-style;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .title {
@@ -113,19 +113,9 @@
     align-self: start;
   }
 
-  .text {
-    grid-column: 1 / span 2;
-    align-items: flex-start;
-  }
-
+  .text,
   .socials {
     grid-column: 1 / span 2;
     align-items: flex-start;
   }
 }
-
-// @media only screen and (max-width: 656.5px) {
-//   .profile {
-//     width: clamp(312px, 90%, 450px);
-//   }
-// }

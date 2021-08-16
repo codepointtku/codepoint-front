@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
 import {useTranslation} from 'next-i18next'
 import styles from '../../styles/Home.module.scss'
-=======
-import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
->>>>>>> Stashed changes
 
 export default function Repositories({repos}: any) {
   const {t} = useTranslation(['common'])

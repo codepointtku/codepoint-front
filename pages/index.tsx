@@ -10,11 +10,8 @@ import About from '../components/about/About'
 import Header from '../components/header/Header'
 import Repositories from '../components/repos/Repos'
 import Profiles from '../components/profiles/Profiles'
-<<<<<<< Updated upstream
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
-=======
 import Nav from '../components/nav/Nav'
->>>>>>> Stashed changes
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 

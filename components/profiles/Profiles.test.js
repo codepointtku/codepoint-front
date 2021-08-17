@@ -2,7 +2,6 @@ import Enzyme, {mount} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import {MockedProvider} from '@apollo/client/testing'
 import {act} from 'react-dom/test-utils'
-import 'jsdom-global/register'
 import {GET_PROFILES} from '../../graphql/graphql'
 import Profiles from './Profiles'
 
@@ -13,7 +12,7 @@ jest.mock('next/image', () => {
   return img
 })
 
-const mocksProfiles = [
+const mocksProfilesData = [
   {
     request: {query: GET_PROFILES},
     result: {
@@ -92,7 +91,7 @@ const setUp = async () => {
   let wrapper
   await act(async () => {
     wrapper = mount(
-      <MockedProvider addTypename={false} mocks={mocksProfiles}>
+      <MockedProvider addTypename={false} mocks={mocksProfilesData}>
         <Profiles />
       </MockedProvider>
     )
@@ -141,12 +140,11 @@ describe('Profiles component', () => {
   })
 })
 
-
 describe('Profiles errors', () => {
   it('should cant load', async () => {
     const errorMock = [
       {
-        request: {query: GET_PROFILES,},
+        request: {query: GET_PROFILES},
         error: new Error('An error occurred'),
       },
     ]
@@ -170,7 +168,7 @@ describe('Profiles errors', () => {
     const emptyMocks = [
       {
         request: {query: GET_PROFILES},
-        result: {data: {profiles: [],},},
+        result: {data: {profiles: []}},
       },
     ]
 

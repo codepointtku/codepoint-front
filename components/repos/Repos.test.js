@@ -2,13 +2,12 @@ import Enzyme, {mount} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import {MockedProvider} from '@apollo/client/testing'
 import {act} from 'react-dom/test-utils'
-import 'jsdom-global/register'
 import Repos from './Repos'
 import {GET_PROJECTS} from '../../graphql/graphql'
 
 Enzyme.configure({adapter: new Adapter()})
 
-const mocksRepos = [
+const mocksReposData = [
   {
     request: {query: GET_PROJECTS},
     result: {
@@ -66,7 +65,7 @@ const setUp = async () => {
   let wrapper
   await act(async () => {
     wrapper = mount(
-      <MockedProvider addTypename={false} mocks={mocksRepos}>
+      <MockedProvider addTypename={false} mocks={mocksReposData}>
         <Repos />
       </MockedProvider>
     )
@@ -108,7 +107,7 @@ describe('projects errors', () => {
   it('should cant load', async () => {
     const errorMock = [
       {
-        request: {query: GET_PROJECTS,},
+        request: {query: GET_PROJECTS},
         error: new Error('An error occurred'),
       },
     ]
@@ -132,7 +131,7 @@ describe('projects errors', () => {
     const emptyMocks = [
       {
         request: {query: GET_PROJECTS},
-        result: {data: {projects: [],},},
+        result: {data: {projects: []}},
       },
     ]
 

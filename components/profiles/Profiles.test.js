@@ -1,105 +1,110 @@
-import Enzyme, {shallow} from 'enzyme'
+import Enzyme, {mount} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import {MockedProvider} from '@apollo/client/testing'
+import {act} from 'react-dom/test-utils'
+import {GET_PROFILES} from '../../graphql/graphql'
 import Profiles from './Profiles'
-import Image from 'next/image'
 
 Enzyme.configure({adapter: new Adapter()})
 
-const setUp = (
-  props = {
-    team: [
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
+jest.mock('next/image', () => {
+  const img = () => <></>
+  return img
+})
+
+const mocksProfilesData = [
+  {
+    request: {query: GET_PROFILES},
+    result: {
+      data: {
+        profiles: [
+          {
+            id: 'xxxx0',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx1',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx2',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx3',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx4',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx5',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx6',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx7',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+          {
+            id: 'xxxx8',
+            name: 'first last',
+            description: 'xx',
+            github: 'https://github.com/xxx',
+            avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
+          },
+        ],
       },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-      {
-        node: {
-          avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
-          bio: 'xx',
-          id: 'xxxx',
-          name: 'first last',
-          url: 'https://github.com/',
-        },
-      },
-    ],
-  }
-) => {
-  const wrapper = shallow(<Profiles {...props} />)
+    },
+  },
+]
+
+const setUp = async () => {
+  let wrapper
+  await act(async () => {
+    wrapper = mount(
+      <MockedProvider addTypename={false} mocks={mocksProfilesData}>
+        <Profiles />
+      </MockedProvider>
+    )
+    await new Promise((resolve) => setTimeout(resolve, 20))
+    wrapper.update()
+  })
   return wrapper
 }
 
 describe('Profiles component', () => {
   let wrapper
-  beforeEach(() => {
-    wrapper = setUp()
+  beforeEach(async () => {
+    wrapper = await setUp()
   })
 
   it('renders', () => {
@@ -118,7 +123,7 @@ describe('Profiles component', () => {
 
   it('renders profiles image', () => {
     const profile = wrapper.find('.profile')
-    const image = profile.find(Image)
+    const image = profile.find('img')
     expect(image.length).toBe(9)
   })
 
@@ -132,5 +137,53 @@ describe('Profiles component', () => {
     const profile = wrapper.find('.profile')
     const profileBio = profile.find('.text')
     expect(profileBio.length).toBe(9)
+  })
+})
+
+describe('Profiles errors', () => {
+  it('should cant load', async () => {
+    const errorMock = [
+      {
+        request: {query: GET_PROFILES},
+        error: new Error('An error occurred'),
+      },
+    ]
+
+    let wrapper
+    await act(async () => {
+      wrapper = mount(
+        <MockedProvider addTypename={false} mocks={errorMock}>
+          <Profiles />
+        </MockedProvider>
+      )
+      await new Promise((resolve) => setTimeout(resolve, 20))
+      wrapper.update()
+    })
+
+    const error = wrapper.find('.error')
+    expect(error.text()).toContain('Error: cant load profiles')
+  })
+
+  it('should empty', async () => {
+    const emptyMocks = [
+      {
+        request: {query: GET_PROFILES},
+        result: {data: {profiles: []}},
+      },
+    ]
+
+    let wrapper
+    await act(async () => {
+      wrapper = mount(
+        <MockedProvider addTypename={false} mocks={emptyMocks}>
+          <Profiles />
+        </MockedProvider>
+      )
+      await new Promise((resolve) => setTimeout(resolve, 20))
+      wrapper.update()
+    })
+
+    const error = wrapper.find('.error')
+    expect(error.text()).toContain('profiles is empty')
   })
 })

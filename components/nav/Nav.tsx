@@ -8,7 +8,7 @@ export default function Nav() {
             <Link href="#about">
                 <a className={styles.tabBtn} id="about_image">
                     <Image
-                        src="/info-solid.svg"
+                        src="/info-solid.webp"
                         alt="About us"
                         id="about_icon"
                         width={30}
@@ -20,7 +20,7 @@ export default function Nav() {
             <Link href="#projects">
                 <a className={styles.tabBtn} id="projects_image">
                     <Image
-                        src="/icons8-project.svg"
+                        src="/project.webp"
                         alt="Projects"
                         id="projects-icon"
                         width={30}
@@ -32,7 +32,7 @@ export default function Nav() {
             <Link href="#members">
                 <a className={styles.tabBtn} id="members_image">
                     <Image
-                        src="/users-solid.svg"
+                        src="/users-solid.webp"
                         alt="Members"
                         id="members-icon"
                         width={30}

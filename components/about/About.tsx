@@ -24,7 +24,7 @@ export default function About() {
         />
       </a>
       <Image
-        src="/about_us.svg"
+        src="/about_us.webp"
         alt="About us picture"
         width={254}
         height={227}

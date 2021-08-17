@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/" passHref>
         <a>
           <Image
-            src="/codepoint_logo_lapinakyva2.svg"
+            src="/codepoint_logo_lapinakyva2.webp"
             alt="CodePoint logo"
             width={160}
             height={23}
@@ -39,7 +39,7 @@ export default function Header() {
 
       <div className={styles.btn_container}>
           <Image
-            src="/icons8-language-60-white.png"
+            src="/icons8-language-60-white.webp"
             alt="Language selection"
             width={25}
             height={25}

@@ -2,9 +2,9 @@ import {useTranslation} from 'next-i18next'
 import Image from 'next/image'
 import styles from '../../styles/Profiles.module.scss'
 import pageimg from '../../public/members.webp'
-import github from '../../public/github.svg'
-import linkedin from '../../public/linkedin.svg'
-import earth from '../../public/earth.svg'
+import github from '../../public/github.webp'
+import linkedin from '../../public/linkedin.webp'
+import earth from '../../public/earth.webp'
 
 export default function Profiles({team}: any) {
   const {t} = useTranslation(['common'])

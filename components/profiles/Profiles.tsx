@@ -31,7 +31,7 @@ export default function Profiles() {
       <div className={styles.memberinfo}>
         <h2 className={styles.heading}>{team.name}</h2>
       </div>
-      <p className={styles.text}>{team.description}</p>
+      <p className={styles.text}>{team.bio}</p>
     </a>
   ))
   return (

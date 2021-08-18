@@ -2,7 +2,6 @@ import Enzyme, {mount} from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import {MockedProvider} from '@apollo/client/testing'
 import {act} from 'react-dom/test-utils'
-import 'jsdom-global/register'
 import Repos from './Repos'
 import {GET_PROJECTS} from '../../graphql/graphql'
 

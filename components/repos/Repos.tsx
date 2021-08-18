@@ -4,7 +4,7 @@ import styles from '../../styles/Repos.module.scss'
 export default function Repositories({repos}: any) {
   const {t} = useTranslation(['common'])
   const title = (
-    <h1 className={styles.pagetitle}>
+    <h1 className={styles.pagetitle} id="projects">
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
         {t('projects')}
       </a>

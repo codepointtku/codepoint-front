@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/" passHref>
         <a>
           <Image
-            src="/codepoint_logo_lapinakyva2.webp"
+            src="/codepoint_logo_lapinakyva2.svg"
             alt="CodePoint logo"
             width={160}
             height={23}
@@ -31,20 +31,21 @@ export default function Header() {
           </a>
         </li>
         <li className={styles.menu_item}>
-          <a href="#members" id="members-text">
+          <a href="#profiles" id="members-text">
             Members
           </a>
         </li>
       </ul>
 
       <div className={styles.btn_container}>
-          <Image
-            src="/icons8-language-60-white.webp"
-            alt="Language selection"
-            width={25}
-            height={25}
-          />
         <ul className={styles.dropdown}>
+            <Image
+              className={styles.image}
+              src="/icons8-language-60-white.webp"
+              alt="Language selection"
+              width={60}
+              height={60}
+            />
           <li className={styles.language}>
             <a href="#">English</a>
           </li>

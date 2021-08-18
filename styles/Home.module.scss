@@ -114,7 +114,12 @@
   list-style: none;
 }
 
-.header .dropdown li{
+.image {
+  background-color: red;
+  margin-right: 5px;
+}
+
+.header .dropdown li {
   background-color: #009bd8;
   border-radius: 60px;
   width: 170px;
@@ -150,14 +155,8 @@
 .header .dropdown:hover {
   background-color: #009bd8;
   max-width: 160px;
-}
-
-.header .dropdown Image {
-  display: flex;
-  align-items: center;
-  margin: 3px 5px 0px 2px;
-  margin-left: -32px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header .dropdown .text {

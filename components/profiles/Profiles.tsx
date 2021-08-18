@@ -21,25 +21,26 @@ export default function Profiles() {
   const team = data.profiles
   if (team.length < 1)
     return (<h2 className={styles.error} >profiles is empty</h2>);
+
   const title = <h1 className={styles.pagetitle} id="profiles">{t('members')}</h1>
   const profile = team.map((team: teamData) => (
-    <div className={styles.profile} key={team.id}>
+    <div className={styles.profile} key={team.node.id}>
       <div className={styles.profilepicture}>
-        <Image src={team.avatarUrl} alt="A profile picture" layout="fill" />
+        <Image src={team.node.avatarUrl} alt="A profile picture" layout="fill" />
       </div>
-      <h2 className={styles.name}>{team.name}</h2>
-      <p className={styles.title}>{team.bio}</p>
+      <h2 className={styles.name}>{team.node.name}</h2>
+      <p className={styles.title}>{team.node.bio}</p>
       <p className={styles.text}>
         {t('about')} + {t('about')}
       </p>
       <div className={styles.socials}>
-        <a href={team.url}>
+        <a href={team.node.url}>
           <Image src={github} alt="github" />
         </a>
         <a href={'https://www.linkedin.com'}>
           <Image src={linkedin} alt="linkedin" />
         </a>
-        <a href={team.url}>
+        <a href={team.node.url}>
           <Image src={earth} alt="earth" />
         </a>
       </div>

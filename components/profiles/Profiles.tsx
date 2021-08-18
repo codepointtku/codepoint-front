@@ -3,13 +3,17 @@ import {useTranslation} from 'next-i18next'
 import Image from 'next/image'
 import {GET_PROFILES} from '../../graphql/graphql'
 import {teamData} from '../../graphql/types/ProfileData'
-import styles from '../../styles/Home.module.scss'
+import styles from '../../styles/Profiles.module.scss'
+import pageimg from '../../public/members.webp'
+import github from '../../public/github.svg'
+import linkedin from '../../public/linkedin.svg'
+import earth from '../../public/earth.svg'
 
 export default function Profiles() {
   const {t} = useTranslation(['common'])
   const {data, loading, error} = useQuery(GET_PROFILES)
 
-  if(loading)
+  if (loading)
     return (<h2 className={styles.loading} >Loading...</h2>);
   if (error)
     return (<h2 className={styles.error} >Error: cant load profiles</h2>);
@@ -17,26 +21,36 @@ export default function Profiles() {
   const team = data.profiles
   if (team.length < 1)
     return (<h2 className={styles.error} >profiles is empty</h2>);
-
-  const title = <h1 className={styles.title}>{t('members')}</h1>
+  const title = <h1 className={styles.pagetitle} id="profiles">{t('members')}</h1>
   const profile = team.map((team: teamData) => (
-    <a key={team.id} href={team.github} className={styles.profile}>
-      <Image
-        src={team.avatarUrl}
-        alt="A profile picture"
-        width={128}
-        height={128}
-        quality={50}
-      />
-      <div className={styles.memberinfo}>
-        <h2 className={styles.heading}>{team.name}</h2>
+    <div className={styles.profile} key={team.id}>
+      <div className={styles.profilepicture}>
+        <Image src={team.avatarUrl} alt="A profile picture" layout="fill" />
       </div>
-      <p className={styles.text}>{team.description}</p>
-    </a>
+      <h2 className={styles.name}>{team.name}</h2>
+      <p className={styles.title}>{team.bio}</p>
+      <p className={styles.text}>
+        {t('about')} + {t('about')}
+      </p>
+      <div className={styles.socials}>
+        <a href={team.url}>
+          <Image src={github} alt="github" />
+        </a>
+        <a href={'https://www.linkedin.com'}>
+          <Image src={linkedin} alt="linkedin" />
+        </a>
+        <a href={team.url}>
+          <Image src={earth} alt="earth" />
+        </a>
+      </div>
+    </div>
   ))
   return (
     <>
       {title}
+      <div className={styles.pageimg}>
+        <Image src={pageimg} alt="members" />
+      </div>
       <div className={styles.grid}>{profile}</div>
     </>
   )

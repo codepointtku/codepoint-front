@@ -2,13 +2,13 @@ import {useQuery} from '@apollo/client'
 import {useTranslation} from 'next-i18next'
 import {GET_PROJECTS} from '../../graphql/graphql'
 import {repoData} from '../../graphql/types/ProjectData'
-import styles from '../../styles/Home.module.scss'
+import styles from '../../styles/Repos.module.scss'
 
 export default function Repositories() {
   const {t} = useTranslation(['common'])
   const {data, loading, error} = useQuery(GET_PROJECTS)
 
-  if(loading)
+  if (loading)
     return (<h2 className={styles.loading} >Loading...</h2>);
   if (error)
     return (<h2 className={styles.error} >Error: cant load projects</h2>);
@@ -18,7 +18,7 @@ export default function Repositories() {
     return (<h2 className={styles.error} >projects is empty</h2>);
 
   const title = (
-    <h1 className={styles.title}>
+    <h1 className={styles.pagetitle} id="projects">
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
         {t('projects')}
       </a>
@@ -26,6 +26,7 @@ export default function Repositories() {
   )
   const repositories = repos.map((repos: repoData) => (
     <a key={repos.id} href={repos.url} className={styles.card}>
+      <div className={styles.cornerstyle} />
       <h2 className={styles.heading}>{repos.name}</h2>
       <p className={styles.text}>{repos.description}</p>
     </a>

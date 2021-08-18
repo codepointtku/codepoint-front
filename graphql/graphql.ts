@@ -6,7 +6,9 @@ export const GET_PROFILES = gql`
     profiles {
       id
       name
-      description
+      bio
+      url
+      linkedin
       github
       avatarUrl
     }

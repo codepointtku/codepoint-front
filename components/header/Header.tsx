@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
-import SetLanguage from '../set-language/SetLanguage'
-import languageimg from '../../public/icons8-language-60-white.png'
 import {useRouter} from 'next/dist/client/router'
 
 export default function Header() {
@@ -39,17 +37,22 @@ export default function Header() {
       </ul>
       <div className={styles.btn_container}>
         <ul className={styles.dropdown}>
-          <Image src={languageimg} alt="Language selection" width={25} height={25} />
-          <li className={styles.language}>
+          <li>
             <a href="#">English</a>
           </li>
-          <li className={styles.language}>
+          <li>
             <a href="#">Suomi</a>
           </li>
+          <div className={styles.test}>
+            <Image
+              className={styles.image}
+              src="/icons8-language-60-white.webp"
+              alt="Language selection"
+              width={60}
+              height={60}
+            />
+          </div>
         </ul>
-      </div>
-      <div>
-        <SetLanguage />
       </div>
     </header>
   )

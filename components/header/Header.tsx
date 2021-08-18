@@ -2,9 +2,12 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
 import {useRouter} from 'next/dist/client/router'
+import SetLanguage from '../set-language/SetLanguage'
+import {useTranslation} from 'next-i18next'
 
 export default function Header() {
   const router = useRouter()
+  const {t} = useTranslation(['common'])
   return (
     <header className={styles.header} id="about">
       <Link href="/" passHref>
@@ -22,37 +25,21 @@ export default function Header() {
       </Link>
       <ul className={styles.menu}>
         <li className={router.pathname === '/' ? styles.menu_item_selected : styles.menu_item}>
-          <Link href="/">About Us</Link>
+          <Link href="/">{t('aboutus')}</Link>
         </li>
         <li
           className={
             router.pathname === '/projects' ? styles.menu_item_selected : styles.menu_item
           }>
-          <Link href="/projects">Projects</Link>
+          <Link href="/projects">{t('projects')}</Link>
         </li>
         <li
           className={router.pathname === '/members' ? styles.menu_item_selected : styles.menu_item}>
-          <Link href="/members">Members</Link>
+          <Link href="/members">{t('members')}</Link>
         </li>
       </ul>
       <div className={styles.btn_container}>
-        <ul className={styles.dropdown}>
-          <li>
-            <a href="#">English</a>
-          </li>
-          <li>
-            <a href="#">Suomi</a>
-          </li>
-          <div className={styles.test}>
-            <Image
-              className={styles.image}
-              src="/icons8-language-60-white.webp"
-              alt="Language selection"
-              width={60}
-              height={60}
-            />
-          </div>
-        </ul>
+        <SetLanguage />
       </div>
     </header>
   )

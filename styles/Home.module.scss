@@ -60,7 +60,13 @@
     justify-content: center;
     width: 100%;
     background-color: #ffffff;
-    // border-bottom: 2px solid #ce4b16;
+    border-style: none solid solid solid;
+    border-color: #ce4b16;
+    border-width: 2px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 325px;
+    align-self: center;
     top: 0;
     margin: 0;
     z-index: 1;
@@ -91,7 +97,7 @@
   display: flex;
   width: 100%;
   align-items: left;
-  justify-content: left;
+  justify-content: center;
   justify-self: start;
 }
 .header a {
@@ -123,8 +129,6 @@
   color: #ffffff;
   border-radius: 60px;
   height: 41px;
-  border-style: none;
-  width: auto;
   max-width: 41px;
   -webkit-transition: max-width 0.5s;
   transition: max-width 0.5s;
@@ -132,18 +136,21 @@
   z-index: 3;
 
   & button {
-    background-color: #009bd8;
-    border-radius: 60px;
-    border: 0;
-    // width: 170px;
+    background-color: transparent;
     height: 41px;
-    // line-height: 41px;
-    // text-align: center;
-    float: right;
-    flex-grow: 1;
     color: #ffffff;
     font-size: 16px;
-    // position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 60px;
+    border: 1px solid transparent;
+
+    float: left;
+    position: relative;
+    min-width: 72px;
+    align-items: center;
 
     &:hover {
       background-color: #ce4b16;
@@ -159,38 +166,13 @@
   // border-radius: 50%;
   border: none;
 }
-.test {
+.languageimg {
   min-width: 41px;
   min-height: 31px;
   max-height: 41px;
   max-width: 41px;
   border-radius: 100%;
   padding: 10px;
-}
-
-.header .dropdown li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 60px;
-  border: 1px solid transparent;
-  width: 170px;
-  height: 41px;
-  text-align: center;
-  float: left;
-  color: #ffffff;
-  font-size: 16px;
-  position: relative;
-
-  a {
-    margin: 0 6px;
-  }
-}
-
-.header ul li:hover {
-  background-color: #ce4b16;
-  border: 1px solid #fff;
-  border-radius: 60px;
 }
 
 .header .menu li:hover {
@@ -209,29 +191,10 @@
 
 .header .dropdown:hover {
   background-color: #009bd8;
-  max-width: 160px;
-}
-
-.header .dropdown Image {
-  display: flex;
-  align-items: center;
-  margin: 3px 5px 0px 2px;
-  margin-left: -32px;
-  margin-right: 10px;
-  max-width: 168px;
-
-  li {
+  max-width: 186px;
+  button {
     max-height: 39px;
   }
-}
-
-.header .dropdown .text {
-  font-size: 16px;
-  padding-left: 6px;
-  padding-right: 8px;
-  padding-bottom: 10px;
-  white-space: nowrap;
-  margin-top: 10px;
 }
 
 .main {
@@ -276,6 +239,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position-y: 10vw;
+  margin-top: 100px;
 }
 
 .footerlogo,

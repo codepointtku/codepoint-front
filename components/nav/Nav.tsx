@@ -13,13 +13,7 @@ export default function Nav() {
       </Link>
       <Link href="/projects">
         <a className={styles.tabBtn} id="projects_image">
-          <Image
-            src="/icons8-project.svg"
-            alt="Projects"
-            id="projects-icon"
-            width={30}
-            height={30}
-          />
+          <Image src="/project.svg" alt="Projects" id="projects-icon" width={30} height={30} />
           <p>Projects</p>
         </a>
       </Link>

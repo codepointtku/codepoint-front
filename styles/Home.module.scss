@@ -5,22 +5,167 @@
   grid-template-areas:
     'header header header'
     'main main main'
-    'footer footer footer';
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: clamp(100px, 150px, 200px) 2fr clamp(100px, 150px, 200px);
+    'footer footer footer'
+    'nav nav nav';
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*Mobile and tablet viewport*/
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-areas: 
+      'header'
+      'main'
+      'footer'
+      'nav';
+  }
+  .header li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/*Desktop viewport*/
+@media screen and (min-width: 769px) {
+  .grid {
+    grid-template-areas: 
+      'header header header'
+      'main main main'
+      'footer footer footer'
+      'nav nav nav';
+  }
+  .nav {
+    position: absolute;
+    left: -9999px;
+  }
+  /*Top page navigation on desktop*/
+  .header .menu {
+    display: inline-flex;
+    position: fixed;
+    margin-left: auto;
+    padding-right: 6.55rem;
+    list-style: none;
+    font-weight: 600;
+    color: black;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .header .menu_item {
+    display: grid;
+    margin-left: 10px;
+    background-color: transparent;
+    align-self: center;
+  }
+
+  .footer .footerlogo,
+  .footer .footerinfo {
+    margin-bottom: 1rem;
+  }
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem;
   grid-area: header;
+  display: flex;
+  width: 100%;
+  align-items: left;
+  justify-content: left;
+  justify-self: start;
+  padding-left: 1.75rem;
+  z-index: 1;
+}
+.header a {
+  display: flex;
+  justify-content: center;
 }
 
-.header p {
-  font-size: 2rem;
-  font-weight: 200;
+.header .btn_container {
+  display: flex;
+  margin-left: auto;
+  padding-right: 1.75rem;
+  align-items: flex-end;
+  justify-content: right;
+  z-index: 1;
+}
+
+.header .dropdown {
+  display: inline-flex;
+  grid-area: header;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: #ce4b16;
+  color: #ffffff;
+  border-radius: 60px;
+  height: 41px;
+  border-style: none;
+  width: auto;
+  max-width: 41px;
+  -webkit-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+  list-style: none;
+}
+
+.image {
+  background-color: red;
+  margin-right: 5px;
+}
+
+.header .dropdown li {
+  background-color: #009bd8;
+  border-radius: 60px;
+  width: 170px;
+  height: 41px;
+  line-height: 41px;
+  text-align: center;
+  float: left;
+  color: #ffffff;
+  font-size: 16px;
+  position: relative;
+}
+
+.header ul li:hover {
+  background-color: #ce4b16;
+  border: 1px solid #fff;
+  border-radius: 60px;
+}
+
+.header .menu li:hover {
+  background-color: transparent;
+  border: none;
+  color: #ce4b16;
+}
+
+.header ul li:hover > ul {
+  display: block;
+}
+
+.header ul {
+  display: none;
+}
+
+.header .dropdown:hover {
+  background-color: #009bd8;
+  max-width: 160px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header .dropdown .text {
+  font-size: 16px;
+  padding-left: 6px;
+  padding-right: 8px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  margin-top: 10px;
 }
 
 .main {
@@ -35,24 +180,43 @@
   background-size: cover;
 }
 
+.about {
+  display: grid;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-self: center;
+}
+
+.abouttext {
+  display: grid;
+  width: 60%;
+  font-size: 1rem;
+  justify-self: center;
+}
+
+.about a {
+  justify-self: center;
+}
+
 .footer {
   grid-area: footer;
   padding: 1rem;
   height: max-content;
   display: flex;
+  width: 100%;
+  height: 350px;
   justify-content: center;
-  border-top: 2px solid var(--gray);
-  background-color: #f5f5f5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23bee0ef' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%234e80a8' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23bbd9e8' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23437698' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%238fa0aa' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230f6a9f' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23adc1d0' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%233284ae' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23a1aab2' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%2354a1c3' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23c3d2e4' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2337a2cb' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-color: #009bd8;
   background-attachment: fixed;
   background-size: cover;
-  background-blend-mode: screen;
   background-position-y: 10vw;
 }
 
 .footerlogo,
 .footerinfo {
   margin: 1rem;
+  margin-bottom: 7rem;
+  margin-left: 2rem;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -60,7 +224,7 @@
 
 .footerinfo {
   padding: 1rem;
-  border-left: 1px solid var(--gray);
+  border-left: 1px solid var(--black);
 }
 
 .footer a {
@@ -72,19 +236,51 @@
   margin-block-start: 0;
   margin-block-end: 0;
 }
+/*Bottom navigation on mobile and tablet*/
+.nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  background: #ffffff;
+  width: 100%;
+  justify-content: center;
+  padding-top: 1rem;
+  grid-area: nav;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tabBtn { /*Text is centered*/
+  display: grid;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-self: center;
+}
+
+.tabBtn Image { /*Images are centered*/
+  display: grid;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.tabBtn:hover {
+  color: #ce4b16;
+  background-color: none;
+}
 
 .title {
   margin: 0;
-  padding: 1rem 0 1rem 0;
+  padding: 0;
   text-align: center;
-  line-height: 1.15;
-  font-size: clamp(2rem, 4rem, 6rem);
+  font-size: clamp(1.25rem, 1.25rem, 1.5rem);
 }
 
 .title,
 .title a {
-  font-weight: 200;
-  color: var(--cyan);
+  font-weight: bold;
+  color: black;
   border-color: var(--black);
 }
 
@@ -99,16 +295,6 @@
 .footer a:focus,
 .footer a:active {
   text-decoration: underline;
-}
-
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.abouttext {
-  width: 50%;
 }
 
 .grid {

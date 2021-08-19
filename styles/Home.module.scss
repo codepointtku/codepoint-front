@@ -74,6 +74,10 @@
     display: grid;
     background-color: transparent;
     align-self: center;
+    &:hover {
+      text-shadow: 0.5px 0.5px #bababa66;
+      text-decoration: underline;
+    }
   }
 
   .menu_item_selected {
@@ -82,6 +86,12 @@
     align-self: center;
     & a {
       color: #ce4b16;
+    }
+    &:hover {
+      a {
+        text-shadow: 0.5px 0.5px #ce4a1640;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -170,12 +180,6 @@
   max-width: 41px;
   border-radius: 100%;
   padding: 10px;
-}
-
-.header .menu li:hover {
-  background-color: transparent;
-  border: none;
-  color: #ce4b16;
 }
 
 .header ul li:hover > ul {
@@ -281,22 +285,27 @@
 .tabBtn {
   /*Text is centered*/
   display: grid;
-  padding-left: 10px;
-  padding-right: 10px;
   justify-self: center;
-}
-
-.tabBtn Image {
-  /*Images are centered*/
-  display: grid;
-  align-items: center;
-  margin: auto;
-  margin-top: 10px;
+  justify-content: center;
+  width: 95px;
 }
 
 .tabBtn:hover {
+  text-shadow: 0.5px 0.5px #bababa;
+  text-decoration: underline;
+}
+
+.tabBtn_selected {
+  display: grid;
+  justify-self: center;
+  justify-content: center;
+  width: 95px;
   color: #ce4b16;
-  background-color: none;
+
+  &:hover {
+    text-shadow: 0.5px 0.5px #ce4a1666;
+    text-decoration: underline;
+  }
 }
 
 .title {

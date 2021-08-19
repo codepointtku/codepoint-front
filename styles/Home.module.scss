@@ -382,3 +382,16 @@
   color: #0070f3;
   border-color: #0070f3;
 }
+
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 2rem;
+}
+
+.loading {
+  text-align: center;
+  color: var(--cyan);
+  font-size: 2rem;
+}

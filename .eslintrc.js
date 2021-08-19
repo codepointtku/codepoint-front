@@ -5,4 +5,7 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:jest/recommended'
   ],
+  env: {
+    es6: true,
+  },
 }

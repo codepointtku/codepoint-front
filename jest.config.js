@@ -4,4 +4,5 @@ module.exports = {
         '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
         'react-i18next': '<rootDir>/__mocks__/translateMock.js',
     },
+    'testEnvironment': 'jsdom',
 }

@@ -21,63 +21,81 @@ const mocksProfilesData = [
           {
             id: 'xxxx0',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx1',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx2',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx3',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx4',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx5',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx6',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx7',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
           {
             id: 'xxxx8',
             name: 'first last',
-            description: 'xx',
+            bio: 'xx',
+            url: 'https://url.com/',
+            linkedin: 'https://linkedin.com/xx',
             github: 'https://github.com/xxx',
             avatarUrl: 'https://avatars.githubusercontent.com/u/xxx',
           },
@@ -112,8 +130,13 @@ describe('Profiles component', () => {
   })
 
   it('renders header', () => {
-    const title = wrapper.find('h1')
-    expect(title.length).toBe(1)
+    const pagetitle = wrapper.find('h1')
+    expect(pagetitle.length).toBe(1)
+  })
+
+  it('renders page image', () => {
+    const pageimg = wrapper.find('.pageimg')
+    expect(pageimg.length).toBe(1)
   })
 
   it('renders profiles', () => {
@@ -123,20 +146,30 @@ describe('Profiles component', () => {
 
   it('renders profiles image', () => {
     const profile = wrapper.find('.profile')
-    const image = profile.find('img')
+    const image = profile.find('.profilepicture')
     expect(image.length).toBe(9)
   })
 
   it('renders profiles name', () => {
     const profile = wrapper.find('.profile')
-    const name = profile.find('.memberinfo')
+    const name = profile.find('.name')
     expect(name.length).toBe(9)
   })
 
-  it('renders profiles bio', () => {
+  it('renders profiles title', () => {
     const profile = wrapper.find('.profile')
-    const profileBio = profile.find('.text')
-    expect(profileBio.length).toBe(9)
+    const title = profile.find('.title')
+    expect(title.length).toBe(9)
+  })
+  it('renders profiles text', () => {
+    const profile = wrapper.find('.profile')
+    const text = profile.find('.text')
+    expect(text.length).toBe(9)
+  })
+  it('renders profiles socials', () => {
+    const profile = wrapper.find('.profile')
+    const socials = profile.find('.socials')
+    expect(socials.length).toBe(9)
   })
 })
 

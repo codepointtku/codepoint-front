@@ -1,6 +1,6 @@
 # Codepoint - Front-end
 
-[![codecov](https://codecov.io/gh/codepointtku/codepoint-front/branch/main/graph/badge.svg?token=f63W1HtqyG)](https://codecov.io/gh/codepointtku/codepoint-front)
+[![codecov](https://codecov.io/gh/codepointtku/codepoint-front/branch/develop/graph/badge.svg?token=f63W1HtqyG)](https://codecov.io/gh/codepointtku/codepoint-front)
 
 **Codepoint's Front-end web application.**
 
@@ -20,7 +20,8 @@ $ npm install
 
 **Setup** a `.env.local`
 ```env
-TOKEN=*Your github token*
+NEXT_PUBLIC_TOKEN=*Endpoint token*
+NEXT_PUBLIC_GRAPHQL_URL=*Graphql End-point url*
 ```
 
 **Run** the project!

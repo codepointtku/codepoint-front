@@ -8,7 +8,6 @@
 * **Open Source:** Meaning, that you may fork, copy and use this product, **completely free**. Let us know if you'd like to collaborate or contribute with us.
 
 [Contact for questions, information and to contribute](mailto:juuso.laakso@turku.fi)
-[Documentation](https://codepointtku.github.io/codepoint-front/)
 
 ## Requirements
 [Node.js](https://nodejs.org/) v16 Current (16.3) or greater

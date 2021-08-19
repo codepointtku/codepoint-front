@@ -33,11 +33,12 @@ describe('SetLanguage component', () => {
     expect(listItems[1].props.value).toEqual('fi')
   })
 
-  it('change language', () => {
-    wrapper
-      .find('ul')
-      .at(0)
-      .simulate('change', {target: {value: 'en', name: 'en'}})
+  it('changes language to en', () => {
+    wrapper.find('#en').simulate('click', {target: {value: 'en', name: 'en'}})
+    expect(wrapper).not.toBeNull()
+  })
+  it('changes language to fi', () => {
+    wrapper.find('#fi').simulate('click', {target: {value: 'fi', name: 'fi'}})
     expect(wrapper).not.toBeNull()
   })
 })

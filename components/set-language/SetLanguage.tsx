@@ -7,7 +7,6 @@ import Image from 'next/image'
 const SetLanguage = () => {
   const {t} = useTranslation(['common'])
   const router = useRouter()
-  const {locale} = router
   const changeLanguage = (e: any) => {
     const locale = e.target.value
     router.push(router.pathname, router.asPath, {locale})
@@ -15,11 +14,11 @@ const SetLanguage = () => {
 
   return (
     <div className={styles.btn_container}>
-      <ul defaultValue={locale} className={styles.dropdown}>
-        <button value="en" onClick={changeLanguage}>
+      <ul className={styles.dropdown}>
+        <button value="en" id="en" onClick={changeLanguage}>
           {t('en')}
         </button>
-        <button value="fi" onClick={changeLanguage}>
+        <button value="fi" id="fi" onClick={changeLanguage}>
           {t('fi')}
         </button>
         <div className={styles.languageimg}>

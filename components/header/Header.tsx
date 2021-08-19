@@ -7,6 +7,7 @@ import {useTranslation} from 'next-i18next'
 
 export default function Header() {
   const router = useRouter()
+  const route = router.pathname
   const {t} = useTranslation(['common'])
   return (
     <header className={styles.header} id="about">
@@ -24,17 +25,13 @@ export default function Header() {
         </a>
       </Link>
       <ul className={styles.menu}>
-        <li className={router.pathname === '/' ? styles.menu_item_selected : styles.menu_item}>
+        <li className={route === '/' ? styles.menu_item_selected : styles.menu_item}>
           <Link href="/">{t('aboutus')}</Link>
         </li>
-        <li
-          className={
-            router.pathname === '/projects' ? styles.menu_item_selected : styles.menu_item
-          }>
+        <li className={route === '/projects' ? styles.menu_item_selected : styles.menu_item}>
           <Link href="/projects">{t('projects')}</Link>
         </li>
-        <li
-          className={router.pathname === '/members' ? styles.menu_item_selected : styles.menu_item}>
+        <li className={route === '/members' ? styles.menu_item_selected : styles.menu_item}>
           <Link href="/members">{t('members')}</Link>
         </li>
       </ul>

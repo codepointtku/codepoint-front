@@ -10,7 +10,7 @@ export default function About() {
     <Link href="/" passHref>
     <div className={styles.about}>
       <div className={styles.abouttext}>
-        <h1 className={styles.title}>{t('aboutus')}</h1>
+        <h1 className={styles.title} id="about">{t('aboutus')}</h1>
         <p>{t('about')}</p>
       </div>
       <a href="https://www.turku.fi/tyopiste" rel="noreferrer" target="_blank">

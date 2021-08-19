@@ -1,6 +1,5 @@
 import {useTranslation} from 'next-i18next'
 import Image from 'next/image'
-
 import styles from '../../styles/Profiles.module.scss'
 import pageimg from '../../public/members.webp'
 import github from '../../public/github.svg'
@@ -9,7 +8,7 @@ import earth from '../../public/earth.svg'
 
 export default function Profiles({team}: any) {
   const {t} = useTranslation(['common'])
-  const title = <h1 className={styles.pagetitle}>{t('members')}</h1>
+  const title = <h1 className={styles.pagetitle} id="profiles">{t('members')}</h1>
   const profile = team.map((team: teamData) => (
     <div className={styles.profile} key={team.node.id}>
       <div className={styles.profilepicture}>

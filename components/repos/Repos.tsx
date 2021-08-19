@@ -1,5 +1,4 @@
 import {useTranslation} from 'next-i18next'
-
 import styles from '../../styles/Repos.module.scss'
 
 export default function Repositories({repos}: any) {

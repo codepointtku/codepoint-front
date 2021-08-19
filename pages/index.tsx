@@ -17,7 +17,7 @@ export default function Home() {
           name="description"
           content="List of projects, current events and achievements of Codepoint Turku"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.webp" />
       </Head>
       <Header />
       <main className={styles.main}>

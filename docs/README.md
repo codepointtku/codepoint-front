@@ -1,6 +1,6 @@
 # Codepoint - Front-end
 
-[![codecov](https://codecov.io/gh/codepointtku/codepoint-front/branch/main/graph/badge.svg?token=f63W1HtqyG)](https://codecov.io/gh/codepointtku/codepoint-front)
+[![codecov](https://codecov.io/gh/codepointtku/codepoint-front/branch/develop/graph/badge.svg?token=f63W1HtqyG)](https://codecov.io/gh/codepointtku/codepoint-front)
 
 **Codepoint's Front-end web application.**
 
@@ -8,6 +8,7 @@
 * **Open Source:** Meaning, that you may fork, copy and use this product, **completely free**. Let us know if you'd like to collaborate or contribute with us.
 
 [Contact for questions, information and to contribute](mailto:juuso.laakso@turku.fi)
+[Documentation](https://codepointtku.github.io/codepoint-front/)
 
 ## Requirements
 [Node.js](https://nodejs.org/) v16 Current (16.3) or greater
@@ -20,7 +21,8 @@ $ npm install
 
 **Setup** a `.env.local`
 ```env
-TOKEN=*Your github token*
+NEXT_PUBLIC_TOKEN=*Endpoint token*
+NEXT_PUBLIC_GRAPHQL_URL=*Graphql End-point url*
 ```
 
 **Run** the project!

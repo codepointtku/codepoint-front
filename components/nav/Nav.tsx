@@ -1,20 +1,20 @@
 import {useTranslation} from 'next-i18next'
-import {useRouter} from 'next/dist/client/router'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.scss'
 
-export default function Nav() {
-  const router = useRouter()
+interface NavProps {
+  route: string
+}
+
+export default function Nav({route}: NavProps) {
   const {t} = useTranslation(['common'])
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <a
-          className={router.pathname === '/' ? styles.tabBtn_selected : styles.tabBtn}
-          id="about_image">
+        <a className={route === '/' ? styles.tabBtn_selected : styles.tabBtn} id="about_image">
           <Image
-            src={router.pathname === '/' ? '/info-solid-orange.svg' : '/info-solid.svg'}
+            src={route === '/' ? '/info-solid-orange.svg' : '/info-solid.svg'}
             alt="About us"
             id="about_icon"
             width={30}
@@ -25,10 +25,10 @@ export default function Nav() {
       </Link>
       <Link href="/projects">
         <a
-          className={router.pathname === '/projects' ? styles.tabBtn_selected : styles.tabBtn}
+          className={route === '/projects' ? styles.tabBtn_selected : styles.tabBtn}
           id="projects_image">
           <Image
-            src={router.pathname === '/projects' ? '/project-orange.svg' : '/project.svg'}
+            src={route === '/projects' ? '/project-orange.svg' : '/project.svg'}
             alt="Projects"
             id="projects-icon"
             width={30}
@@ -39,10 +39,10 @@ export default function Nav() {
       </Link>
       <Link href="/members">
         <a
-          className={router.pathname === '/members' ? styles.tabBtn_selected : styles.tabBtn}
+          className={route === '/members' ? styles.tabBtn_selected : styles.tabBtn}
           id="members_image">
           <Image
-            src={router.pathname === '/members' ? '/users-solid-orange.svg' : '/users-solid.svg'}
+            src={route === '/members' ? '/users-solid-orange.svg' : '/users-solid.svg'}
             alt="Members"
             id="members-icon"
             width={30}

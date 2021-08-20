@@ -3,7 +3,7 @@ import {useTranslation} from 'next-i18next'
 import styles from '../../styles/Home.module.scss'
 import Image from 'next/image'
 
-//Dropdown list component for changing language
+//Component for changing language
 const SetLanguage = () => {
   const {t} = useTranslation(['common'])
   const router = useRouter()

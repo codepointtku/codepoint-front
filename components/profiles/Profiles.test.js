@@ -135,40 +135,40 @@ describe('Profiles component', () => {
   })
 
   it('renders page image', () => {
-    const pageimg = wrapper.find('.pageimg')
+    const pageimg = wrapper.find('.profiles_pageimg')
     expect(pageimg.length).toBe(1)
   })
 
   it('renders profiles', () => {
-    const profiles = wrapper.find('.profile')
+    const profiles = wrapper.find('.profiles_profile')
     expect(profiles.length).toBe(9)
   })
 
   it('renders profiles image', () => {
-    const profile = wrapper.find('.profile')
-    const image = profile.find('.profilepicture')
+    const profile = wrapper.find('.profiles_profile')
+    const image = profile.find('.profiles_profilepicture')
     expect(image.length).toBe(9)
   })
 
   it('renders profiles name', () => {
-    const profile = wrapper.find('.profile')
-    const name = profile.find('.name')
+    const profile = wrapper.find('.profiles_profile')
+    const name = profile.find('.profiles_name')
     expect(name.length).toBe(9)
   })
 
   it('renders profiles title', () => {
-    const profile = wrapper.find('.profile')
-    const title = profile.find('.title')
+    const profile = wrapper.find('.profiles_profile')
+    const title = profile.find('.profiles_title')
     expect(title.length).toBe(9)
   })
   it('renders profiles text', () => {
-    const profile = wrapper.find('.profile')
-    const text = profile.find('.text')
+    const profile = wrapper.find('.profiles_profile')
+    const text = profile.find('.profiles_text')
     expect(text.length).toBe(9)
   })
   it('renders profiles socials', () => {
-    const profile = wrapper.find('.profile')
-    const socials = profile.find('.socials')
+    const profile = wrapper.find('.profiles_profile')
+    const socials = profile.find('.profiles_socials')
     expect(socials.length).toBe(9)
   })
 })

@@ -91,25 +91,25 @@ describe('Repos component', () => {
   })
 
   it('projects should be found', () => {
-    const projects = wrapper.find('.card')
+    const projects = wrapper.find('.repos_card')
     expect(projects.length).toBe(6)
   })
 
   it('projects names should be found', () => {
-    const projects = wrapper.find('.card')
-    const name = projects.find('.heading')
+    const projects = wrapper.find('.repos_card')
+    const name = projects.find('.repos_heading')
     expect(name.length).toBe(6)
   })
 
   it('projects description should be found', () => {
-    const projects = wrapper.find('.card')
-    const description = projects.find('.text')
+    const projects = wrapper.find('.repos_card')
+    const description = projects.find('.repos_text')
     expect(description.length).toBe(6)
   })
 
   it('renders corner styling', () => {
-    const projects = wrapper.find('.card')
-    const cornerstyle = projects.find('.cornerstyle')
+    const projects = wrapper.find('.repos_card')
+    const cornerstyle = projects.find('.repos_cornerstyle')
     expect(cornerstyle.length).toBe(6)
   })
 })

@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
-import {useRouter} from 'next/dist/client/router'
 import SetLanguage from '../set-language/SetLanguage'
 import {useTranslation} from 'next-i18next'
 
-export default function Header() {
-  const router = useRouter()
-  const route = router.pathname
+interface HeaderProps {
+  route: string
+}
+
+export default function Header({route}: HeaderProps) {
   const {t} = useTranslation(['common'])
   return (
     <header className={styles.header} id="about">

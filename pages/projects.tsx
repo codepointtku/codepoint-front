@@ -4,10 +4,12 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import Header from '../components/header/Header'
 import Nav from '../components/nav/Nav'
+import {useRouter} from 'next/dist/client/router'
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 
 export default function Projects() {
+  const route = useRouter().pathname
   return (
     <>
       <Head>
@@ -18,10 +20,10 @@ export default function Projects() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header route={route} />
       <Repos />
       <DynamicFooter />
-      <Nav />
+      <Nav route={route} />
     </>
   )
 }

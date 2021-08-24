@@ -5,12 +5,13 @@ import About from '../components/about/About'
 import Header from '../components/header/Header'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Nav from '../components/nav/Nav'
-import {useRouter} from 'next/dist/client/router'
+import {useRouter} from 'next/router'
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 
 export default function Home() {
   const route = useRouter().pathname
+
   return (
     <div className={styles.container}>
       <Head>
@@ -31,6 +32,9 @@ export default function Home() {
   )
 }
 
-export async function getServerSideProps({locale}: any) {
-  return {props: {...(await serverSideTranslations(locale, ['common', 'footer']))}}
+export async function getStaticProps({locale}: any) {
+  return {
+    props: {...(await serverSideTranslations(locale, ['common', 'footer']))},
+    revalidate: 60
+  }
 }

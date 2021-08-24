@@ -4,7 +4,9 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import Header from '../components/header/Header'
 import Nav from '../components/nav/Nav'
-import {useRouter} from 'next/dist/client/router'
+import {useRouter} from 'next/router'
+import {GET_PROJECTS} from '../graphql/graphql'
+import {initializeApollo, addApolloState} from '../lib/apolloClient'
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 
@@ -28,6 +30,13 @@ export default function Projects() {
   )
 }
 
-export async function getServerSideProps({locale}: any) {
-  return {props: {...(await serverSideTranslations(locale, ['common', 'footer']))}}
+export async function getStaticProps({locale}: any) {
+  const apolloClient = initializeApollo()
+
+  await apolloClient.query({query: GET_PROJECTS,})
+
+  return addApolloState(apolloClient, {
+    props: {...(await serverSideTranslations(locale, ['common', 'footer']))},
+    revalidate: 60,
+  })
 }

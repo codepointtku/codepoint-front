@@ -1,4 +1,4 @@
-import {useRouter} from 'next/dist/client/router'
+import {useRouter} from 'next/router'
 import {useTranslation} from 'next-i18next'
 import styles from '../../styles/Home.module.scss'
 import Image from 'next/image'

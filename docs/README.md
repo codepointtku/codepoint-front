@@ -7,7 +7,8 @@
 * **Technologies:** Front-end is built with Next.js. We do our tests with Jest.js, and use our own linter and prettier configs for this project.
 * **Open Source:** Meaning, that you may fork, copy and use this product, **completely free**. Let us know if you'd like to collaborate or contribute with us.
 
-[Contact for questions, information and to contribute](mailto:juuso.laakso@turku.fi)
+[Documentation](https://codepointtku.github.io/codepoint-front/)
+[Contact for questions, information and to contribute](mailto:juuso.laakso@turku.fi)  
 
 ## Requirements
 [Node.js](https://nodejs.org/) v16 Current (16.3) or greater
@@ -43,5 +44,20 @@ docker build -t codepoint-front .
 docker run -dp 3000:3000 codepoint-front
 ```
 
+## Troupleshooting
+<!-- theres no errors or bugs only user errors and features -->
+```
+Error: cant load projects 
+
+Error: cant load profiles
+```
+
+Check if you have **`.env.local`** -file on your project root and it contains required tokens.
+```env
+NEXT_PUBLIC_TOKEN=*Endpoint token*
+NEXT_PUBLIC_GRAPHQL_URL=*Graphql End-point url*
+```
+
 ## License
 This repository is released under the [MIT License](LICENSE)
+

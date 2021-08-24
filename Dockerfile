@@ -7,7 +7,7 @@ WORKDIR /app
 RUN npm install
 
 # Copies the dependency tree.
-COPY package.json package-lock.json .
+COPY package.json package-lock.json ./
 
 # Build section
 FROM node:alpine as builder

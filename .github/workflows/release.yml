@@ -8,6 +8,9 @@ jobs:
   release:
     name: release
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
+      NEXT_PUBLIC_TOKEN: ${{ secrets.NEXT_PUBLIC_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

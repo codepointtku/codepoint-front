@@ -6,9 +6,7 @@ import * as nextRouter from 'next/router'
 const mockRouter = (nextRouter) => {
   nextRouter.useRouter = jest.fn()
   nextRouter.useRouter.mockImplementation(() => ({route: '/'}))
-  nextRouter.useRouter.mockImplementation(() => (
-    {push: jest.fn()}
-  ))
+  nextRouter.useRouter.mockImplementation(() => ({push: jest.fn()}))
 }
 mockRouter(nextRouter)
 
@@ -30,15 +28,17 @@ describe('SetLanguage component', () => {
   })
 
   it('should find 2 option en/fi', () => {
-    const listItems = [...wrapper.find('option')]
+    const listItems = [...wrapper.find('button')]
     expect(listItems[0].props.value).toEqual('en')
     expect(listItems[1].props.value).toEqual('fi')
   })
 
-  it('change language', () => {
-    wrapper.find('select').at(0).simulate('change',
-      {target: {value: 'en', name: 'en'}}
-    )
+  it('changes language to en', () => {
+    wrapper.find('#en').simulate('click', {target: {value: 'en', name: 'en'}})
+    expect(wrapper).not.toBeNull()
+  })
+  it('changes language to fi', () => {
+    wrapper.find('#fi').simulate('click', {target: {value: 'fi', name: 'fi'}})
     expect(wrapper).not.toBeNull()
   })
 })

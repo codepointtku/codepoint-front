@@ -1,20 +1,19 @@
-import Head from 'next/head'
+import Repos from '../components/repos/Repos'
 import dynamic from 'next/dynamic'
-import styles from '../styles/Home.module.scss'
-import About from '../components/about/About'
-import Header from '../components/header/Header'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import Head from 'next/head'
+import Header from '../components/header/Header'
 import Nav from '../components/nav/Nav'
 import {useRouter} from 'next/dist/client/router'
 
 const DynamicFooter = dynamic(() => import('../components/footer/Footer'))
 
-export default function Home() {
+export default function Projects() {
   const route = useRouter().pathname
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>CodepointTKU</title>
+        <title>CodepointTKU Projects</title>
         <meta
           name="description"
           content="List of projects, current events and achievements of Codepoint Turku"
@@ -22,12 +21,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header route={route} />
-      <main className={styles.main}>
-        <About />
-      </main>
+      <Repos />
       <DynamicFooter />
       <Nav route={route} />
-    </div>
+    </>
   )
 }
 

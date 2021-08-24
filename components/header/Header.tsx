@@ -2,8 +2,14 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
 import SetLanguage from '../set-language/SetLanguage'
+import {useTranslation} from 'next-i18next'
 
-export default function Header() {
+interface HeaderProps {
+  route: string
+}
+
+export default function Header({route}: HeaderProps) {
+  const {t} = useTranslation(['common'])
   return (
     <header className={styles.header} id="about">
       <Link href="/" passHref>
@@ -19,40 +25,20 @@ export default function Header() {
           />
         </a>
       </Link>
-      <SetLanguage />
-
       <ul className={styles.menu}>
-        <li className={styles.menu_item}>
-          <a href="#about">About Us</a>
+        <li className={route === '/' ? styles.menu_item_selected : styles.menu_item}>
+          <Link href="/">{t('aboutus')}</Link>
         </li>
-        <li className={styles.menu_item}>
-          <a href="#projects" id="projects-text">
-            Projects
-          </a>
+        <li className={route === '/projects' ? styles.menu_item_selected : styles.menu_item}>
+          <Link href="/projects">{t('projects')}</Link>
         </li>
-        <li className={styles.menu_item}>
-          <a href="#profiles" id="members-text">
-            Members
-          </a>
+        <li className={route === '/members' ? styles.menu_item_selected : styles.menu_item}>
+          <Link href="/members">{t('members')}</Link>
         </li>
       </ul>
 
       <div className={styles.btn_container}>
-        <ul className={styles.dropdown}>
-            <Image
-              className={styles.image}
-              src="/icons8-language-60-white.webp"
-              alt="Language selection"
-              width={60}
-              height={60}
-            />
-          <li className={styles.language}>
-            <a href="#">English</a>
-          </li>
-          <li className={styles.language}>
-            <a href="#">Suomi</a>
-          </li>
-        </ul>
+        <SetLanguage />
       </div>
     </header>
   )

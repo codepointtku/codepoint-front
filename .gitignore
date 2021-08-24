@@ -31,3 +31,10 @@ yarn-error.log*
 # lock files
 package-lock.json
 yarn.lock
+next-env.d.ts
+next-env.d.ts
+public/sw.js.map
+public/workbox-202dc43a.js.map
+public/workbox-202dc43a.js
+public/sw.js
+next-env.d.ts

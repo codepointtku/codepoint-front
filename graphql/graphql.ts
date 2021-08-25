@@ -2,7 +2,7 @@ import {gql} from '@apollo/client'
 
 // list of graphql queries
 export const GET_PROFILES = gql`
-  query Profiles {
+  query profiles {
     profiles {
       id
       name

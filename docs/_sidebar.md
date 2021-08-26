@@ -1,6 +1,7 @@
 * [Home](/)
 * [Getting started](/getting-started.md)
 * [Docker](/dockerguide.md)
+* [Translations](/translations.md)
 * [used packages](/packages.md)
 * [Troupleshooting](/troupleshooting.md)
 * [Licence](/licence.md)

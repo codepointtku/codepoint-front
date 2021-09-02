@@ -15,12 +15,16 @@ const SetLanguage = () => {
   return (
     <div className={styles.btn_container}>
       <ul className={styles.dropdown}>
-        <button value="en" id="en" onClick={changeLanguage}>
+        {/* <button value="en" id="en" onClick={changeLanguage}>
           {t('en')}
         </button>
         <button value="fi" id="fi" onClick={changeLanguage}>
           {t('fi')}
-        </button>
+        </button> */}
+        {langs.map((lang) => 
+          <button key={langs.indexOf(lang)} value={lang} id={lang} onClick={changeLanguage}>
+            {t(lang)}
+          </button>)}
         <div className={styles.languageimg}>
           <Image
             className={styles.image}
@@ -36,3 +40,8 @@ const SetLanguage = () => {
 }
 
 export default SetLanguage
+
+
+const langs = [
+  'fi', 'en', 'fr', 'ko', 'ar', 'vi'
+]

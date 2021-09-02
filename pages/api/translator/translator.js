@@ -6,8 +6,13 @@ const footerStrEn = {
     report: 'Report a Problem',
 }
 
-
 const commonStrEn = {
+    ar: 'Arabic',
+    fr: 'French',
+    ko: 'Korea',
+    vi: 'Vietnamese',
+    en: 'English',
+    fi: 'Finnish',
     members: 'Members',
     projects: 'Projects',
     aboutus: 'About us',
@@ -32,7 +37,7 @@ export async function TranslateFooter(ln){
 }
 
 async function TranslateString(ln, string){
-    const res = await fetch("http://192.168.1.102:5000/translate", {
+    const res = await fetch("http://localhost:5000/translate", {
 	method: "POST",
 	body: JSON.stringify({
 		q: string,

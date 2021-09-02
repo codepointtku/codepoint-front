@@ -4,6 +4,10 @@ export default (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   res.end(
     JSON.stringify({
+      ar: 'Arabic',
+      fr: 'French',
+      ko: 'Korean',
+      vi: 'Vietnamese',
       en: 'English',
       fi: 'Finnish',
       members: 'Members',

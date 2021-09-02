@@ -28,6 +28,13 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# PWA/JS worker generated files
+public/sw.js.map
+public/workbox-202dc43a.js.map
+public/workbox-202dc43a.js
+public/sw.js
+
 # lock files
 package-lock.json
 yarn.lock
+

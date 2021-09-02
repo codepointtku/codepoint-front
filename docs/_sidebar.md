@@ -2,6 +2,8 @@
 * [Getting started](/getting-started.md)
 * [Docker](/dockerguide.md)
 * [Translations](/translations.md)
+* [Queries](/Queries.md)
+* [Testing](/Testing.md)
 * [used packages](/packages.md)
 * [Troupleshooting](/troupleshooting.md)
 * [Licence](/licence.md)

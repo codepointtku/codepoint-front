@@ -2,6 +2,13 @@
 /node_modules
 /.pnp
 .pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
@@ -30,8 +37,8 @@ yarn-error.log*
 
 # PWA/JS worker generated files
 public/sw.js.map
-public/workbox-202dc43a.js.map
-public/workbox-202dc43a.js
+public/workbox-*.js.map
+public/workbox-*.js
 public/sw.js
 
 # lock files

@@ -43,5 +43,3 @@ public/sw.js
 
 # lock files
 package-lock.json
-yarn.lock
-

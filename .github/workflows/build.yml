@@ -1,6 +1,6 @@
 name: Build
 
-on: 
+on:
   push:
     branches: [main]
   pull_request:
@@ -21,20 +21,17 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install NPM dependencies
-        run: npm install
+      - name: Install dependencies
+        run: yarn install
 
       - name: Check Lint
-        run: npm run lint
-
-      - name: Run Test
-        run: npm run test
+        run: yarn lint
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Collect test coverage report
-        run: npm run coverage
+        run: yarn coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2

@@ -23,7 +23,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.43.4",
-    "sharp": "^0.29.2"
+    "sharp": "^0.29.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.0",

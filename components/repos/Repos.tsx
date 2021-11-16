@@ -15,7 +15,7 @@ export default function Repositories() {
   if (repos.length < 1) return <h2 className={styles.error}>projects is empty</h2>
 
   const title = (
-    <h1 className={styles.repos_pagetitle} id="projects">
+    <h1 className={styles.repos_pagetitle} id="projects" data-test="page-title">
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
         {t('projects')}
       </a>

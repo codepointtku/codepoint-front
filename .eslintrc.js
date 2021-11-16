@@ -3,9 +3,9 @@ module.exports = {
     '@codepointtku/jsx-eslint',
     'next',
     'next/core-web-vitals',
-    'plugin:jest/recommended'
+    'plugin:jest/recommended',
+    'plugin:cypress/recommended',
   ],
-  env: {
-    es6: true,
-  },
+  plugins: ['cypress'],
+  env: {es6: true},
 }

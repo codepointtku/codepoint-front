@@ -13,12 +13,12 @@ const SetLanguage = () => {
   }
 
   return (
-    <div className={styles.btn_container}>
+    <div className={styles.btn_container} data-test="language-selector">
       <ul className={styles.dropdown}>
-        <button value="en" id="en" onClick={changeLanguage}>
+        <button value="en" id="en" onClick={changeLanguage} data-test="language-selector-option-en">
           {t('en')}
         </button>
-        <button value="fi" id="fi" onClick={changeLanguage}>
+        <button value="fi" id="fi" onClick={changeLanguage} data-test="language-selector-option-fi">
           {t('fi')}
         </button>
         <div className={styles.languageimg}>

@@ -19,7 +19,7 @@ export default function Profiles() {
   if (team.length < 1) return <h2 className={styles.error}>profiles is empty</h2>
 
   const title = (
-    <h1 className={styles.profiles_pagetitle} id="profiles">
+    <h1 className={styles.profiles_pagetitle} id="profiles" data-test="page-title">
       {t('members')}
     </h1>
   )

@@ -22,10 +22,14 @@ export default function Repositories() {
     </h1>
   )
   const repositories = repos.map((repos: repoData) => (
-    <a key={repos.id} href={repos.url} className={styles.repos_card}>
+    <a key={repos.id} href={repos.url} className={styles.repos_card} data-test="project">
       <div className={styles.repos_cornerstyle} />
-      <h2 className={styles.repos_heading}>{repos.name}</h2>
-      <p className={styles.repos_text}>{repos.description}</p>
+      <h2 className={styles.repos_heading} data-test="title">
+        {repos.name}
+      </h2>
+      <p className={styles.repos_text} data-test="description">
+        {repos.description}
+      </p>
     </a>
   ))
   return (

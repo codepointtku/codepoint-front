@@ -21,6 +21,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx0',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -30,6 +31,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx1',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -39,6 +41,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx2',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -48,6 +51,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx3',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -57,6 +61,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx4',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -66,6 +71,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx5',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -75,6 +81,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx6',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -84,6 +91,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx7',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',
@@ -93,6 +101,7 @@ const mocksProfilesData = [
           {
             id: 'xxxx8',
             name: 'first last',
+            about: 'about',
             bio: 'xx',
             url: 'https://url.com/',
             linkedin: 'https://linkedin.com/xx',

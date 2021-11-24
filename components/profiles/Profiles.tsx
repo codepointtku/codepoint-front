@@ -24,16 +24,25 @@ export default function Profiles() {
     </h1>
   )
   const profile = team.map((team: teamData) => (
-    <div className={styles.profiles_profile} key={team.id}>
+    <div className={styles.profiles_profile} key={team.id} data-test="member">
       <div className={styles.profiles_profilepicture}>
-        <Image src={team.avatarUrl} alt="A profile picture" layout="fill" />
+        <Image
+          src={team.avatarUrl}
+          alt="A profile picture"
+          layout="fill"
+          data-test="member-image"
+        />
       </div>
-      <h2 className={styles.profiles_name}>{team.name}</h2>
-      <p className={styles.profiles_title}>{team.bio}</p>
-      <p className={styles.profiles_text}>
-        {t('about')} + {t('about')}
+      <h2 className={styles.profiles_name} data-test="name">
+        {team.name}
+      </h2>
+      <p className={styles.profiles_title} data-test="bio">
+        {team.bio}
       </p>
-      <div className={styles.profiles_socials}>
+      <p className={styles.profiles_text} data-test="description">
+        {team.about}
+      </p>
+      <div className={styles.profiles_socials} data-test="socials">
         <a href={team.url}>
           <Image src={github} alt="github" />
         </a>

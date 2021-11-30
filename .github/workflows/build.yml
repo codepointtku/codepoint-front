@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [develop]
+  pull_request_target:
+    branches: [develop]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   lint_test_build:
@@ -12,9 +15,20 @@ jobs:
     env:
       NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
       NEXT_PUBLIC_TOKEN: ${{ secrets.NEXT_PUBLIC_TOKEN }}
+      
+    if: |
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     steps:
       - name: Checkout code
+        if: ${{ github.event_name != 'pull_request_target' }}
         uses: actions/checkout@v2
+
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Install Node
         uses: actions/setup-node@v2

@@ -15,7 +15,7 @@ jobs:
     env:
       NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
       NEXT_PUBLIC_TOKEN: ${{ secrets.NEXT_PUBLIC_TOKEN }}
-      
+
     if: |
       (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
       (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
@@ -43,6 +43,9 @@ jobs:
 
       - name: Build project
         run: yarn build
+
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
 
       - name: Collect test coverage report
         run: yarn coverage

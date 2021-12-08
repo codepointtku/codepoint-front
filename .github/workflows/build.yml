@@ -46,6 +46,8 @@ jobs:
 
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
+        with:
+          config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
 
       - name: Collect test coverage report
         run: yarn coverage

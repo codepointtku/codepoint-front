@@ -13,7 +13,7 @@ export default function Header({route}: HeaderProps) {
   return (
     <header className={styles.header} id="about">
       <Link href="/" passHref>
-        <a>
+        <a data-test="logo">
           <Image
             src="/codepoint_logo_lapinakyva2.svg"
             alt="CodePoint logo"
@@ -27,13 +27,19 @@ export default function Header({route}: HeaderProps) {
       </Link>
       <ul className={styles.menu}>
         <li className={route === '/' ? styles.menu_item_selected : styles.menu_item}>
-          <Link href="/">{t('aboutus')}</Link>
+          <Link href="/" passHref>
+            <a data-test="home-link">{t('aboutus')}</a>
+          </Link>
         </li>
         <li className={route === '/projects' ? styles.menu_item_selected : styles.menu_item}>
-          <Link href="/projects">{t('projects')}</Link>
+          <Link href="/projects" passHref>
+            <a data-test="projects-link">{t('projects')}</a>
+          </Link>
         </li>
         <li className={route === '/members' ? styles.menu_item_selected : styles.menu_item}>
-          <Link href="/members">{t('members')}</Link>
+          <Link href="/members" passHref>
+            <a data-test="members-link">{t('members')}</a>
+          </Link>
         </li>
       </ul>
 

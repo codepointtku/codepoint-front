@@ -8,6 +8,7 @@ export const GET_PROFILES = gql`
       name
       bio
       url
+      about
       linkedin
       github
       avatarUrl

@@ -37,8 +37,8 @@ yarn-error.log*
 
 # PWA/JS worker generated files
 public/sw.js.map
-public/workbox-**.js.map
-public/workbox-**.js
+public/workbox-*.js.map
+public/workbox-*.js
 public/sw.js
 
 # lock files

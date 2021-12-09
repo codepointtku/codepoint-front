@@ -10,13 +10,19 @@
     "dev": "next start",
     "lint": "next lint",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
+    "deepmerge": "^4.2.2",
     "@apollo/client": "^3.5.5",
     "graphql": "^16.0.1",
     "i18next": "^21.5.5",
     "i18next-http-backend": "^1.3.1",
+    "lodash": "^4.17.21",
     "next": "^12.0.4",
     "next-i18next": "^9.2.0",
     "next-pwa": "^5.4.4",
@@ -32,15 +38,19 @@
     "@codepointtku/jsx-prettier": "^1.0.5",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
+    "@types/node": "^16.10.5",
     "@types/react": "17.0.37",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "babel-jest": "^27.4.2",
+    "cypress": "^9.0.0",
     "enzyme": "^3.11.0",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.7",
     "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
+    "start-server-and-test": "^1.14.0",
     "typescript": "4.5.2"
   }
 }

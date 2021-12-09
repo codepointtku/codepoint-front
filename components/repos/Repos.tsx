@@ -15,17 +15,21 @@ export default function Repositories() {
   if (repos.length < 1) return <h2 className={styles.error}>projects is empty</h2>
 
   const title = (
-    <h1 className={styles.repos_pagetitle} id="projects">
+    <h1 className={styles.repos_pagetitle} id="projects" data-test="page-title">
       <a href="https://github.com/codepointtku" rel="noreferrer" target="_blank">
         {t('projects')}
       </a>
     </h1>
   )
   const repositories = repos.map((repos: repoData) => (
-    <a key={repos.id} href={repos.url} className={styles.repos_card}>
+    <a key={repos.id} href={repos.url} className={styles.repos_card} data-test="project">
       <div className={styles.repos_cornerstyle} />
-      <h2 className={styles.repos_heading}>{repos.name}</h2>
-      <p className={styles.repos_text}>{repos.description}</p>
+      <h2 className={styles.repos_heading} data-test="title">
+        {repos.name}
+      </h2>
+      <p className={styles.repos_text} data-test="description">
+        {repos.description}
+      </p>
     </a>
   ))
   return (

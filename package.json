@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.7",
-    "@babel/preset-react": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
     "@codepointtku/eslint-config-jsx-eslint": "^1.0.6",
     "@codepointtku/jsx-prettier": "^1.0.5",
     "@testing-library/jest-dom": "^5.16.1",

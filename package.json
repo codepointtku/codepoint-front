@@ -32,7 +32,7 @@
     "sharp": "^0.29.3"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.16.7",
     "@codepointtku/eslint-config-jsx-eslint": "^1.0.6",
     "@codepointtku/jsx-prettier": "^1.0.5",
